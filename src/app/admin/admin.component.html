@@ -1,0 +1,73 @@
+﻿<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="card mt-4">
+            <h4 class="card-header">Admin</h4>
+            <div class="card-body">
+                <p>This page can be accessed only by administrators.</p>
+                <h3>All registered users:</h3>
+                <ul>
+                    <li *ngFor="let user of users">
+                        {{user.firstName}} {{user.lastName}} ({{user.username}})
+                        - <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10">
+                    <div class="card-deck">
+                        <div class="card">
+                            <div class="card-body bg-primary text-center" style="flex: none;">
+                                <br />
+                                <p style="font-size:9vh;color: white;" class="card-text" id="month"></p>
+                                <br />
+                            </div>
+                            <div class="card-body text-center" style="flex: none;">
+                                <br />
+                                <p class="card-text" id="month-text"></p>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body bg-primary text-center" style="flex: none;">
+                                <br />
+                                <p style="font-size:9vh;color: white;" class="card-text" id="date"></p>
+                                <br />
+                            </div>
+                            <div class="card-body text-center" style="flex: none;">
+                                <br />
+                                <p class="card-text" id="date-text"></p>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body bg-primary text-center" style="flex: none;">
+                                <br />
+                                <p style="font-size:9vh;color: white;" class="card-text" id="year"></p>
+                                <br />
+                            </div>
+                            <div class="card-body text-center" style="flex: none;">
+                                <br />
+                                <p class="card-text" id="year-text"></p>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
